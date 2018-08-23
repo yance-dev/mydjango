@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+     <div class="row">
+         <div class="col-md-6 col-md-offset-3">
+             <form action="" method="post">
+                 {% csrf_token %}
+                 <div>
+                     <label for="">书籍名称</label>
+                     <input type="text" class="form-control" name="title">
+                 </div>
+                 <div>
+                     <label for="">价格</label>
+                     <input type="text" class="form-control" name="price">
+                 </div>
+                 <div>
+                     <label for="">出版日期</label>
+                     <input type="date" class="form-control" name="date">
+                 </div>
+                 <div>
+                     <label for="">出版社</label>
+                     <input type="text" class="form-control" name="publish">
+                 </div>
+
+                 <input type="submit" class="btn btn-success pull-right">
+
+
+             </form>
+         </div>
+     </div>
+</div>
+{% endblock %}
