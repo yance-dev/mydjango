@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+
+</head>
+<body>
+<h2>
+    欢迎新同学
+</h2>
+<button class="Ajax">Ajax</button>
+<script>
+    $(".Ajax").click(function () {
+        alert(123)
+        $.ajax({
+            url: '/test/',
+            type:'get',
+            success:function (data) {
+                console.log(data)
+            }
+            }
+
+
+        )
+        
+    })
+</script>
+</body>
+</html>
