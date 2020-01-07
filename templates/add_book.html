@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+     <div class="row">
+         <div class="col-md-6 col-md-offset-3">
+             <form action="" method="post">
+                 {% csrf_token %}
+                 <div class="form-group">
+                     <label for="">书籍名称</label>
+                     <input type="text" class="form-control" name="title">
+                 </div>
+                 <div class="form-group">
+                     <label for="">价格</label>
+                     <input type="text" class="form-control" name="price">
+                 </div>
+                 <div class="form-group">
+                     <label for="">出版日期</label>
+                     <input type="date" class="form-control" name="date">
+                 </div>
+                 <div class="form-group">
+                     <label for="">出版社</label>
+                     <select class="form-control" name="publish">
+                          {% for pub in pub_list%}
+                              <option value="{{ pub.pk }}">
+                              {{ pub.name }}
+                              </option>
+                          {% endfor %}
+                     </select>
+
+                 </div>
+             <div class="form-group">
+                     <label for="">作者</label>
+                     <select class="form-control" name="authors" type="text" multiple >
+                          {% for aut in aut_list%}
+                              <option value="{{ aut.pk }}">
+                              {{ aut.name}}
+                              </option>
+                          {% endfor %}
+                     </select>
+
+                 </div>
+
+                 <input type="submit" class="btn btn-success pull-right">
+
+
+             </form>
+         </div>
+     </div>
+</div>
+{% endblock %}

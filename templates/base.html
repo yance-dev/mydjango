@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bs/css/bootstrap.css">
+    <style>
+        .container {
+            margin-top: 100px;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-width: 1000px;
+            z-index: -10;
+            zoom: 1;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+            background-image: url("https://images.pexels.com/photos/1340588/pexels-photo-1340588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+        }
+
+        .mytable {
+            background-color: #999999;
+        }
+
+        .mynav {
+            background-color: #222222;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="content">
+    <ul class="nav nav-tabs mynav">
+        <li role="presentation"><a href="{% url 'app01:books' %}">Home</a></li>
+        <li role="presentation"><a href="{% url 'app01:addbook' %}">AddBook</a></li>
+    </ul>
+    {% block content %}{% endblock %}
+</div>
+<script src="/static/jq/jquery-3.3.1.js"></script>
+
+</body>
+</html>
